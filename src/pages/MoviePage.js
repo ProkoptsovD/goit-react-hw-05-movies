@@ -1,5 +1,5 @@
     import { useEffect, useState } from "react";
-    import { useLocation } from "react-router-dom";
+    import { useLocation, useSearchParams } from "react-router-dom";
     import { movieService } from "services";
     import { toast } from 'react-toastify';
     import { notifications } from "constants/notifications";
@@ -8,14 +8,15 @@
 
     const MoviePage = () => {
         const [ movieList, setMovieList ] = useState(() => []);
-        const [ movie, setMovie ] = useState();
+        // const [ movie, setMovie ] = useState();
         const [ shouldClearInput, setShouldClearInput ] = useState(false);
         const location = useLocation();
-        console.log(location);
-        
+        const [searchParams, setSearchParams] = useSearchParams();
+        const movie = searchParams.get('query')
+        console.log(movie);
 
         useEffect(() => {
-            if(movie === undefined) {
+            if(movie === null) {
                 return;
             };
 
@@ -40,7 +41,7 @@
         return (
             <main>
                 <Searchbar
-                    onSubmit={ (movie) => setMovie(movie) }
+                    onSubmit={ (movie) => setSearchParams({ query: movie }) }
                     clearInput={ shouldClearInput }
                 />
                 {

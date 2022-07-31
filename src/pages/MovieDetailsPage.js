@@ -12,7 +12,7 @@ export const MovieDetailsPage = () => {
     const { movieId } = useParams();
 
     const location = useLocation();
-    const backLinkHref = location.state?.from ?? ROUTES.movies;
+    const backLinkHref = location.state?.from?.pathname ?? ROUTES.movies;
 
     useEffect(() => {
         movieService.getMovieDetails(movieId).then(({ data }) => {

@@ -6,13 +6,13 @@ const MovieList = ({ movies, path, location }) => {
     return (
         <Movies>
             {
-                movies.map(({ id, original_title }) => (
+                movies.map(({ id, name, original_title, original_name }) => (
                     <Movie key={ id }>
                         <Link
                             to={path ? `${path}/${id}` : id.toString() }
                             state={{ from: location }}
                         >
-                            { original_title }
+                            { name || original_title || original_name }
                         </Link>
                     </Movie>
                 ))
