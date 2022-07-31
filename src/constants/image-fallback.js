@@ -1,0 +1,1 @@
+export const imageFallback = 'https://via.placeholder.com/100x100';
