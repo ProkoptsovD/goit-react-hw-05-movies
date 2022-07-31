@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useState } from "react";
 import { Link, Outlet } from 'react-router-dom';
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { ROUTES } from "constants/routes";
 import { movieService } from "services";
 
@@ -11,7 +11,8 @@ export const MovieDetailsPage = () => {
     const [ movie, setMovie ] = useState();
     const { movieId } = useParams();
 
-    const navigate = useNavigate();
+    const location = useLocation();
+    const backLinkHref = location.state?.from ?? ROUTES.movies;
 
     useEffect(() => {
         movieService.getMovieDetails(movieId).then(({ data }) => {
@@ -30,8 +31,9 @@ export const MovieDetailsPage = () => {
 
     return (
         <main>
-            {/* <BackLink to={ backLinkHref }>Go back</BackLink> */}
-            <button onClick={() => navigate(-1)}>Go back</button>
+            <BackLink to={ backLinkHref }>
+                Go back
+            </BackLink>
             {
                 movie && <MovieDetails {...movie} />
             }

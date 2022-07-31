@@ -1,4 +1,5 @@
     import { useEffect, useState } from "react";
+    import { useLocation } from "react-router-dom";
     import { movieService } from "services";
     import { toast } from 'react-toastify';
     import { notifications } from "constants/notifications";
@@ -9,6 +10,9 @@
         const [ movieList, setMovieList ] = useState(() => []);
         const [ movie, setMovie ] = useState();
         const [ shouldClearInput, setShouldClearInput ] = useState(false);
+        const location = useLocation();
+        console.log(location);
+        
 
         useEffect(() => {
             if(movie === undefined) {
@@ -43,6 +47,7 @@
                     movieList.length
                         ?   <MovieList
                                 movies={ movieList }
+                                location={location}
                             />
                         : null
                 }
