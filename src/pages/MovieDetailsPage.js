@@ -6,6 +6,7 @@ import { movieService } from "services";
 
 import MovieDetails from "components/MovieDetails";
 import BackLink from "components/BackLink";
+import Section from "components/common/Section";
 
 export const MovieDetailsPage = () => {
     const [ movie, setMovie ] = useState();
@@ -34,21 +35,23 @@ export const MovieDetailsPage = () => {
             <BackLink to={ backLinkHref }>
                 Go back
             </BackLink>
-            {
-                movie && <MovieDetails {...movie} />
-            }
-            <p>Additional information</p>
-            <ul>
-                <li>
-                    <Link to={ ROUTES.cast }>Cast</Link>
-                </li>
-                <li>
-                    <Link to={ ROUTES.reviews }>Reviews</Link>
-                </li>
-            </ul>
-            <Suspense fallback="Loading...">
-                <Outlet />
-            </Suspense>
+            <Section>
+                {
+                    movie && <MovieDetails {...movie} />
+                }
+                <p>Additional information</p>
+                <ul>
+                    <li>
+                        <Link to={ ROUTES.cast }>Cast</Link>
+                    </li>
+                    <li>
+                        <Link to={ ROUTES.reviews }>Reviews</Link>
+                    </li>
+                </ul>
+                <Suspense fallback="Loading...">
+                    <Outlet />
+                </Suspense>
+            </Section>
         </main>
     )
 }

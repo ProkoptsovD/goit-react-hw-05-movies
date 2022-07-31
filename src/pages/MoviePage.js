@@ -5,6 +5,7 @@
     import { notifications } from "constants/notifications";
     import Searchbar from "components/Searchbar";
     import MovieList from "components/MovieList";
+import Section from "components/common/Section";
 
     const MoviePage = () => {
         const [ movieList, setMovieList ] = useState(() => []);
@@ -44,14 +45,16 @@
                     onSubmit={ (movie) => setSearchParams({ query: movie }) }
                     clearInput={ shouldClearInput }
                 />
-                {
-                    movieList.length
-                        ?   <MovieList
-                                movies={ movieList }
-                                location={location}
-                            />
-                        : null
-                }
+                <Section>
+                    {
+                        movieList.length
+                            ?   <MovieList
+                                    movies={ movieList }
+                                    location={location}
+                                />
+                            : null
+                    }
+                </Section>
             </main>
         )
     }
