@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/733.c83e7521.chunk.js","mappings":"2JAEA,UAFyB,kBAAM","sources":["pages/NothingFoundPage.js"],"sourcesContent":["const NothingFoundPage = () => <h1>There is no such a page</h1>\n\nexport default NothingFoundPage;"],"names":[],"sourceRoot":""}
