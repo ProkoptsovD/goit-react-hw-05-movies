@@ -15,7 +15,6 @@ import Loader from "components/common/Loader";
 export const MovieDetailsPage = () => {
     const [ movie, setMovie ] = useState();
     const { movieId } = useParams();
-    console.log(movieId);
 
     const location = useLocation();
     const backLinkHref = location.state?.from?.pathname ?? ROUTES.movies;
@@ -31,7 +30,7 @@ export const MovieDetailsPage = () => {
                 title,
                 overview,
             })
-        });
+        }).catch(console.log);
     
     }, [movieId]);
 

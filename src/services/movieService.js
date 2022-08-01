@@ -14,11 +14,68 @@ const END_POINTS = {
 axios.defaults.baseURL = BASE_URL;
 const appendToken = () => '?api_key=' + AUTH_TOKEN;
 
-const getTrendingMovies = () => axios.get(END_POINTS.TRENDING + appendToken());
-const searchMovie = (movie) => axios.get(END_POINTS.SEARCH + appendToken() + '&query=' + movie);
-const getMovieDetails = (movieId) => axios.get(END_POINTS.MOVIE_DETAILS + movieId + appendToken());
-const getCast = (movieId) => axios.get(END_POINTS.MOVIE_DETAILS + movieId + END_POINTS.CAST + appendToken());
-const getReviews = (movieId) => axios.get(END_POINTS.MOVIE_DETAILS + movieId + END_POINTS.REVIEWS + appendToken());
+const getTrendingMovies = async () => {
+    try {
+        const response = await axios.get(END_POINTS.TRENDING + appendToken());
+        if(response.status === 200) {
+            return response;
+        }
+
+        throw new Error(response)
+    } catch (error) {
+        console.log(error);
+    }
+};
+const searchMovie = async (movie) => {
+    try {
+        const response = await axios.get(END_POINTS.SEARCH + appendToken() + '&query=' + movie);
+        if(response.status === 200) {
+            return response;
+        }
+
+        throw new Error(response)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const getMovieDetails = async (movieId) => {
+    try {
+        const response = await axios.get(END_POINTS.MOVIE_DETAILS + movieId + appendToken());
+        console.log(response);
+        if(response.status === 200) {
+            return response;
+        }
+
+        throw new Error(response)
+    } catch (error) {
+        console.log(error);
+    }
+}
+const getCast = async (movieId) => {
+    try {
+        const response = await axios.get(END_POINTS.MOVIE_DETAILS + movieId + END_POINTS.CAST + appendToken());
+        if(response.status === 200) {
+            return response;
+        }
+
+        throw new Error(response)
+    } catch (error) {
+        console.log(error);
+    }
+}
+const getReviews = async (movieId) => {
+    try {
+        const response = await axios.get(END_POINTS.MOVIE_DETAILS + movieId + END_POINTS.REVIEWS + appendToken());
+        if(response.status === 200) {
+            return response;
+        }
+
+        throw new Error(response)
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 export const movieService = {
     getTrendingMovies,

@@ -35,7 +35,7 @@ import Section from "components/common/Section";
 
                 setShouldClearInput(true);
                 setMovieList(results);
-            }).catch((error) => console.log(error));
+            }).catch(console.log);
         }, [movie])
 
         return (

@@ -9,7 +9,9 @@ const Home = () => {
     const location = useLocation();
 
     useEffect(() => {
-        movieService.getTrendingMovies().then(({ data: { results } }) => setTrendingMovies(results));
+        movieService.getTrendingMovies()
+            .then(({ data: { results } }) => setTrendingMovies(results))
+            .catch(console.log);
     }, [])
 
     return (

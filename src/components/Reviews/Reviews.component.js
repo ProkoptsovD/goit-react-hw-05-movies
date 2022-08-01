@@ -9,9 +9,11 @@ const Reviews = () => {
     const { movieId } = useParams();
 
     useEffect(() => {
-        movieService.getReviews(movieId).then(({ data: { results } }) => {
+        movieService.getReviews(movieId)
+        .then(({ data: { results } }) => {
             setreviews(results);
-        });
+        })
+        .catch(console.log);
 
     }, [movieId]);
 
