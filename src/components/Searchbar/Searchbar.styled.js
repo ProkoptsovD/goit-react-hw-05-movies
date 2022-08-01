@@ -43,13 +43,29 @@ export const Input = styled.input`
 
 export const SerchButton = styled.button`
     display: inline-block;
-    min-width: 48px;
-    height: 48px;
-    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 30px;
+    margin: 0 auto;
+    font: inherit;
+    border: none;
+    background-color: skyblue;
+    color: #ffffff;
     opacity: 0.6;
+    outline: none;
+    
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
-    outline: none;
+
+    &:active {
+        box-shadow: inset 0px 0px 4px 0px #fafafa;
+    }
+    &:disabled {
+        background-color: #cacaca;
+        cursor: not-allowed;
+    }
 
     &:hover {
         opacity: 1;

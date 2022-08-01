@@ -9,12 +9,11 @@ import Section from "components/common/Section";
 
     const MoviePage = () => {
         const [ movieList, setMovieList ] = useState(() => []);
-        // const [ movie, setMovie ] = useState();
         const [ shouldClearInput, setShouldClearInput ] = useState(false);
+        const [ searchParams, setSearchParams ] = useSearchParams();
         const location = useLocation();
-        const [searchParams, setSearchParams] = useSearchParams();
+
         const movie = searchParams.get('query')
-        console.log(movie);
 
         useEffect(() => {
             if(movie === null) {

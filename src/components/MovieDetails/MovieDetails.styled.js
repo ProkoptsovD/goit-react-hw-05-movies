@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const MovieCard = styled.article`
     padding-top: 30px;
+    margin-bottom: 30px;
 `;
 export const Poster = styled.img`
     display: block;

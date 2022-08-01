@@ -1,16 +1,21 @@
 import { Suspense, useEffect, useState } from "react";
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useParams, useLocation } from "react-router-dom";
 import { ROUTES } from "constants/routes";
 import { movieService } from "services";
+import { addtionalTabs } from "constants/addtional-tabs";
 
 import MovieDetails from "components/MovieDetails";
 import BackLink from "components/BackLink";
 import Section from "components/common/Section";
+import Divider from "components/common/Divider";
+import Additional from "components/Additional";
+import Loader from "components/common/Loader";
 
 export const MovieDetailsPage = () => {
     const [ movie, setMovie ] = useState();
     const { movieId } = useParams();
+    console.log(movieId);
 
     const location = useLocation();
     const backLinkHref = location.state?.from?.pathname ?? ROUTES.movies;
@@ -39,16 +44,13 @@ export const MovieDetailsPage = () => {
                 {
                     movie && <MovieDetails {...movie} />
                 }
-                <p>Additional information</p>
-                <ul>
-                    <li>
-                        <Link to={ ROUTES.cast }>Cast</Link>
-                    </li>
-                    <li>
-                        <Link to={ ROUTES.reviews }>Reviews</Link>
-                    </li>
-                </ul>
-                <Suspense fallback="Loading...">
+                <Divider />
+                <Additional
+                    title="Additional information"
+                    tabs={ addtionalTabs }
+                />
+                <Divider />
+                <Suspense fallback={ <Loader type="dual-rings" /> }>
                     <Outlet />
                 </Suspense>
             </Section>
