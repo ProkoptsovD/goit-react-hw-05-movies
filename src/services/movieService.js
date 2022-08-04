@@ -42,7 +42,6 @@ const searchMovie = async (movie) => {
 const getMovieDetails = async (movieId) => {
     try {
         const response = await axios.get(END_POINTS.MOVIE_DETAILS + movieId + appendToken());
-        console.log(response);
         if(response.status === 200) {
             return response;
         }
