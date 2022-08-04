@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.a85d8191.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.d95c8f24.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.d70d979c.js",
     "static/js/625.420c495d.chunk.js": "/goit-react-hw-05-movies/static/js/625.420c495d.chunk.js",
     "static/js/249.1fa5c07d.chunk.js": "/goit-react-hw-05-movies/static/js/249.1fa5c07d.chunk.js",
-    "static/js/675.853eecc4.chunk.js": "/goit-react-hw-05-movies/static/js/675.853eecc4.chunk.js",
+    "static/js/675.9bcbca8f.chunk.js": "/goit-react-hw-05-movies/static/js/675.9bcbca8f.chunk.js",
     "static/js/608.ae9f1452.chunk.js": "/goit-react-hw-05-movies/static/js/608.ae9f1452.chunk.js",
     "static/js/307.69d98f28.chunk.js": "/goit-react-hw-05-movies/static/js/307.69d98f28.chunk.js",
     "static/js/774.73377aff.chunk.js": "/goit-react-hw-05-movies/static/js/774.73377aff.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.a85d8191.css.map": "/goit-react-hw-05-movies/static/css/main.a85d8191.css.map",
-    "main.d95c8f24.js.map": "/goit-react-hw-05-movies/static/js/main.d95c8f24.js.map",
+    "main.d70d979c.js.map": "/goit-react-hw-05-movies/static/js/main.d70d979c.js.map",
     "625.420c495d.chunk.js.map": "/goit-react-hw-05-movies/static/js/625.420c495d.chunk.js.map",
     "249.1fa5c07d.chunk.js.map": "/goit-react-hw-05-movies/static/js/249.1fa5c07d.chunk.js.map",
-    "675.853eecc4.chunk.js.map": "/goit-react-hw-05-movies/static/js/675.853eecc4.chunk.js.map",
+    "675.9bcbca8f.chunk.js.map": "/goit-react-hw-05-movies/static/js/675.9bcbca8f.chunk.js.map",
     "608.ae9f1452.chunk.js.map": "/goit-react-hw-05-movies/static/js/608.ae9f1452.chunk.js.map",
     "307.69d98f28.chunk.js.map": "/goit-react-hw-05-movies/static/js/307.69d98f28.chunk.js.map",
     "774.73377aff.chunk.js.map": "/goit-react-hw-05-movies/static/js/774.73377aff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a85d8191.css",
-    "static/js/main.d95c8f24.js"
+    "static/js/main.d70d979c.js"
   ]
 }
