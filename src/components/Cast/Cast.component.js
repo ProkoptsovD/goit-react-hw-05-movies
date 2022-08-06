@@ -11,9 +11,7 @@ const Cast = () => {
 
     useEffect(() => {
         movieService.getCast(movieId)
-        .then(({ data: { cast } }) => {
-            setCastList(cast);
-        })
+        .then(({ data: { cast } }) => setCastList(cast))
         .catch(console.log);
 
     }, [movieId]);

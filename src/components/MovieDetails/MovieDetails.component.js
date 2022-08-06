@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { Genre, GenreList, MovieCard, OverviewText, Poster, Rate, Title, Wrapper } from "./MovieDetails.styled";
-import { imageFallback } from '../../constants/image-fallback';
 
 const MovieDetails = ({ title, rate, overview, genres, poster }) => {
 
@@ -8,7 +7,7 @@ const MovieDetails = ({ title, rate, overview, genres, poster }) => {
     
     return (
         <MovieCard>
-            <Poster src={ poster ?? imageFallback } alt={ title } />
+            <Poster src={ poster } alt={ title } />
             <Wrapper>
                 <Title>{ title }</Title>
                 <Rate>User score: { percantageRateWithNoFloat }%</Rate>

@@ -10,7 +10,7 @@ const BackLink = ({ to, children }) => {
 };
 
 BackLink.propTypes = {
-    to: PropTypes.string.isRequired,
+    to: PropTypes.string,
     children: PropTypes.any
 }
 

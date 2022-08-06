@@ -1,1 +1,1 @@
-export const imageFallback = 'https://via.placeholder.com/100x100';
+export const imageFallback = require('../assets/image-fallback.png');

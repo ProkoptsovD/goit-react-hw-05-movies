@@ -1,9 +1,10 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Outlet } from 'react-router-dom';
 import { useParams, useLocation } from "react-router-dom";
 import { ROUTES } from "constants/routes";
 import { movieService } from "services";
 import { addtionalTabs } from "constants/addtional-tabs";
+import { imageFallback } from '../constants/image-fallback';
 
 import MovieDetails from "components/MovieDetails";
 import BackLink from "components/BackLink";
@@ -17,15 +18,16 @@ export const MovieDetailsPage = () => {
     const { movieId } = useParams();
 
     const location = useLocation();
-    const backLinkHref = location.state?.from ?? ROUTES.movies;
+    const backLinkHref = useRef(location.state?.from ?? ROUTES.movies).current;
 
     useEffect(() => {
         movieService.getMovieDetails(movieId).then(({ data }) => {
             const { vote_average, title, overview, genres, poster_path } = data;
+            const poster = poster_path ? movieService.POSTER_URL + poster_path : imageFallback;
 
             setMovie({
                 rate: vote_average,
-                poster: movieService.POSTER_URL + poster_path,
+                poster,
                 genres,
                 title,
                 overview,
